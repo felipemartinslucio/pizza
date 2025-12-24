@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador de Fatias de Pizza</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffefd5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .contador {
+      font-size: 64px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .botoes {
+      margin-top: 20px;
+    }
+
+    button {
+      font-size: 16px;
+      padding: 10px 18px;
+      margin: 0 6px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+
+    .remover {
+      background-color: #ff6b6b;
+      color: white;
+    }
+
+    .adicionar {
+      background-color: #51cf66;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🍕 Rodízio de Pizza</h1>
+
+    <div class="contador" id="contador">0</div>
+    <p>fatias comidas</p>
+
+    <div class="botoes">
+      <button class="remover" onclick="removerFatia()">- Remover fatia</button>
+      <button class="adicionar" onclick="adicionarFatia()">+ Adicionar fatia</button>
+    </div>
+  </div>
+
+  <p>feito por felipinho martins</p>
+
+  <script>
+    let fatias = 0;
+
+    function adicionarFatia() {
+      fatias++;
+      atualizarContador();
+    }
+
+    function removerFatia() {
+      if (fatias > 0) {
+        fatias--;
+        atualizarContador();
+      }
+    }
+
+    function atualizarContador() {
+      document.getElementById("contador").innerText = fatias;
+    }
+  </script>
+
+</body>
+</html>
